@@ -1,0 +1,63 @@
+.tabs_controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs_controls-item--active {
+  background: $btn-effect-color;
+}
+
+.tabs_controls-item {
+  font-family: $control-font-family;
+  @include font-settings(1rem, 1.2, 600, $control-font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $btn-width;
+  height: $btn-height;
+  //   border: 1px solid $control-font-color;
+  overflow: hidden;
+  text-transform: capitalize;
+  z-index: 1;
+  margin: $btn-margin;
+  border-radius: 50px;
+  position: relative;
+  transition: 1s ease-out;
+}
+
+[data-type='colusion'] {
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: $btn-effect-color;
+    border-radius: 50px;
+    z-index: -5;
+    transform: scale(1);
+    transition: 0.5s;
+  }
+
+  &:before {
+    top: 30px;
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  &:after {
+    top: 30px;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  &:hover {
+    &:before {
+      transform: translateX(530%) scale(10);
+    }
+    &:after {
+      transform: translateX(-530%) scale(10);
+    }
+  }
+}

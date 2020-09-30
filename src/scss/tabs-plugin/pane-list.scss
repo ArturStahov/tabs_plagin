@@ -1,0 +1,31 @@
+.visually-hidden:not(:focus):not(:active),
+input[type='checkbox'].visually-hidden,
+input[type='radio'].visually-hiden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  bottom: 0px;
+  padding: 0px;
+  word-spacing: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  opacity: 0;
+}
+.pane-item {
+  transition-property: opacity;
+  transition-duration: 0.7s;
+}
+.pane-title {
+  @include font-settings(1.3rem, 1.2, 600, $pane-title-font-color);
+  font-family: $pane-title-font-family;
+  margin-bottom: 15px;
+}
+.pane-text {
+  @include font-settings(1rem, 1.2, 400, $pane-text-font-color);
+  font-family: $pane-text-font-family;
+}
+
+.pane-image {
+  margin-bottom: 15px;
+}
